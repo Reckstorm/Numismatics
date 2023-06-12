@@ -1,0 +1,160 @@
+﻿namespace Numismatics
+{
+    partial class Numismatics
+    {
+        /// <summary>
+        ///  Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        ///  Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        ///  Required method for Designer support - do not modify
+        ///  the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            Controls_pnl = new Panel();
+            Blog_btn = new Button();
+            MyCoins_btn = new Button();
+            Balance_lb = new Label();
+            Exchange_btn = new Button();
+            Buy_btn = new Button();
+            Logout_btn = new Button();
+            UserName_lb = new Label();
+            Content_pnl = new Panel();
+            Controls_pnl.SuspendLayout();
+            SuspendLayout();
+            // 
+            // Controls_pnl
+            // 
+            Controls_pnl.BackColor = SystemColors.ControlDark;
+            Controls_pnl.Controls.Add(Blog_btn);
+            Controls_pnl.Controls.Add(MyCoins_btn);
+            Controls_pnl.Controls.Add(Balance_lb);
+            Controls_pnl.Controls.Add(Exchange_btn);
+            Controls_pnl.Controls.Add(Buy_btn);
+            Controls_pnl.Controls.Add(Logout_btn);
+            Controls_pnl.Controls.Add(UserName_lb);
+            Controls_pnl.Location = new Point(0, 2);
+            Controls_pnl.Name = "Controls_pnl";
+            Controls_pnl.Size = new Size(312, 701);
+            Controls_pnl.TabIndex = 0;
+            // 
+            // Blog_btn
+            // 
+            Blog_btn.Location = new Point(3, 224);
+            Blog_btn.Name = "Blog_btn";
+            Blog_btn.Size = new Size(306, 48);
+            Blog_btn.TabIndex = 6;
+            Blog_btn.Text = "Blog";
+            Blog_btn.UseVisualStyleBackColor = true;
+            // 
+            // MyCoins_btn
+            // 
+            MyCoins_btn.Location = new Point(3, 278);
+            MyCoins_btn.Name = "MyCoins_btn";
+            MyCoins_btn.Size = new Size(306, 48);
+            MyCoins_btn.TabIndex = 5;
+            MyCoins_btn.Text = "My Coins";
+            MyCoins_btn.UseVisualStyleBackColor = true;
+            // 
+            // Balance_lb
+            // 
+            Balance_lb.AutoSize = true;
+            Balance_lb.Location = new Point(3, 27);
+            Balance_lb.Name = "Balance_lb";
+            Balance_lb.Size = new Size(61, 20);
+            Balance_lb.TabIndex = 4;
+            Balance_lb.Text = "Balance";
+            // 
+            // Exchange_btn
+            // 
+            Exchange_btn.Location = new Point(3, 170);
+            Exchange_btn.Name = "Exchange_btn";
+            Exchange_btn.Size = new Size(306, 48);
+            Exchange_btn.TabIndex = 3;
+            Exchange_btn.Text = "Exchange";
+            Exchange_btn.UseVisualStyleBackColor = true;
+            Exchange_btn.Click += Exchange_btn_Click;
+            // 
+            // Buy_btn
+            // 
+            Buy_btn.Location = new Point(3, 116);
+            Buy_btn.Name = "Buy_btn";
+            Buy_btn.Size = new Size(306, 48);
+            Buy_btn.TabIndex = 2;
+            Buy_btn.Text = "Buy";
+            Buy_btn.UseVisualStyleBackColor = true;
+            Buy_btn.Click += Buy_btn_Click;
+            // 
+            // Logout_btn
+            // 
+            Logout_btn.Location = new Point(215, 3);
+            Logout_btn.Name = "Logout_btn";
+            Logout_btn.Size = new Size(94, 29);
+            Logout_btn.TabIndex = 1;
+            Logout_btn.Text = "Logout";
+            Logout_btn.UseVisualStyleBackColor = true;
+            // 
+            // UserName_lb
+            // 
+            UserName_lb.AutoSize = true;
+            UserName_lb.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            UserName_lb.Location = new Point(3, 7);
+            UserName_lb.Name = "UserName_lb";
+            UserName_lb.Size = new Size(83, 20);
+            UserName_lb.TabIndex = 0;
+            UserName_lb.Text = "UserName";
+            // 
+            // Content_pnl
+            // 
+            Content_pnl.AutoScroll = true;
+            Content_pnl.Location = new Point(310, 2);
+            Content_pnl.Name = "Content_pnl";
+            Content_pnl.Size = new Size(921, 701);
+            Content_pnl.TabIndex = 1;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlDarkDark;
+            ClientSize = new Size(1232, 703);
+            Controls.Add(Content_pnl);
+            Controls.Add(Controls_pnl);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Name = "Form1";
+            Text = "Form1";
+            Controls_pnl.ResumeLayout(false);
+            Controls_pnl.PerformLayout();
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Panel Controls_pnl;
+        private Label Balance_lb;
+        private Button Exchange_btn;
+        private Button Buy_btn;
+        private Button Logout_btn;
+        private Label UserName_lb;
+        private Button MyCoins_btn;
+        private Button Blog_btn;
+        private Panel Content_pnl;
+    }
+}
