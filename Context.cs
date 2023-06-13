@@ -17,7 +17,7 @@ namespace Numismatics
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=NumismaticsDB;Trusted_Connection=True;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=NumismaticsDB;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true");
         }
     }
 }

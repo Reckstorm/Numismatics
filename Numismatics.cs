@@ -1,4 +1,6 @@
+using Microsoft.Identity.Client;
 using Numismatics.Models;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Numismatics
 {
@@ -9,8 +11,6 @@ namespace Numismatics
         public Numismatics()
         {
             InitializeComponent();
-            Load += (s, e) => CurrentUser = MyContext.Users.First();
-            //Load += (s, e) => this.CurrentUser = MyContext.Users.FirstOrDefault(x => x.Login.Equals("a"));
         }
 
         private void Buy_btn_Click(object sender, EventArgs e)
@@ -87,7 +87,6 @@ namespace Numismatics
                 y += temp.Height + 2;
             }
         }
-
         public void RenderCoins()
         {
             this.Content_pnl.Controls.Clear();
@@ -106,6 +105,49 @@ namespace Numismatics
             }
         }
 
+        private void Download_btn_Click(object sender, EventArgs e)
+        {
+            List<string> strings = new List<string>();
+            foreach (Log l in MyContext.Logs)
+            {
+                if (l.UserToID.Equals(CurrentUser.ID) || l.UserFromID.Equals(CurrentUser.ID))
+                {
+                    strings.Add($"ID: {l.ID} | From: {MyContext.Users.FirstOrDefault(x => x.ID.Equals(l.UserFromID)).Login} | To: {MyContext.Users.FirstOrDefault(x => x.ID.Equals(l.UserToID)).Login} | Coin: {MyContext.Coins.FirstOrDefault(x => x.ID.Equals(l.CoinID)).ID} - {MyContext.Coins.FirstOrDefault(x => x.ID.Equals(l.CoinID)).Name}");
+                }
+            }
 
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "text|*.txt";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllLines(saveFileDialog.FileName, strings);
+            }
+        }
+
+        public void SetBalance(double balance)
+        {
+            this.Balance_lb.Text = balance.ToString();
+        }
+
+        public void SetUserData(User user)
+        {
+            this.UserName_lb.Text = user.Login;
+            this.Balance_lb.Text = user.Balance.ToString();
+            CurrentUser = user;
+        }
+
+        private void Numismatics_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void Logout_btn_Click(object sender, EventArgs e)
+        {
+            this.Owner.Visible = true;
+            this.CurrentUser = null;
+            this.Balance_lb.Text = string.Empty;
+            this.Content_pnl.Controls.Clear();
+            this.Visible = false;
+        }
     }
 }

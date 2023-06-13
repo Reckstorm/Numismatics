@@ -39,6 +39,7 @@ namespace Numismatics
 
         private void Exchange_btn_Click(object sender, EventArgs e)
         {
+            User tempUser = new User();
             Numismatics parent = this.Parent.Parent as Numismatics;
             double price = double.Parse(base.Price_lb.Text);
             double myPrice = PriceMy_lb.Text.Equals(string.Empty) ? 0 : double.Parse(this.PriceMy_lb.Text);
@@ -50,6 +51,7 @@ namespace Numismatics
                 {
                     if (u.Coins.Any(x => x.ID.Equals(tempCoin.ID)))
                     {
+                        tempUser = u;
                         u.Coins.Remove(tempCoin);
                         u.Coins.Add(tempCoinMy);
                         break;
@@ -62,6 +64,8 @@ namespace Numismatics
                 parent.MyContext.Update(tempCoin);
                 parent.MyContext.Update(tempCoinMy);
                 parent.MyContext.SaveChanges();
+                LogData(new Log(tempUser.ID, parent.CurrentUser.ID, tempCoin.ID, DateTime.Now));
+                LogData(new Log(parent.CurrentUser.ID, tempUser.ID, tempCoinMy.ID, DateTime.Now));
             }
             else
             {

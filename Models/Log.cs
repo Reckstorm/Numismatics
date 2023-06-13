@@ -21,9 +21,8 @@ namespace Numismatics.Models
             CoinID = 0;
             Date = DateTime.MinValue;
         }
-        public Log(int iD, int userFromID, int userToID, int coinID, DateTime date)
+        public Log(int userFromID, int userToID, int coinID, DateTime date)
         {
-            ID = iD;
             UserFromID = userFromID;
             UserToID = userToID;
             CoinID = coinID;
