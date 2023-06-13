@@ -63,6 +63,7 @@
             Blog_btn.TabIndex = 6;
             Blog_btn.Text = "Blog";
             Blog_btn.UseVisualStyleBackColor = true;
+            Blog_btn.Click += Blog_btn_Click;
             // 
             // MyCoins_btn
             // 
@@ -72,6 +73,7 @@
             MyCoins_btn.TabIndex = 5;
             MyCoins_btn.Text = "My Coins";
             MyCoins_btn.UseVisualStyleBackColor = true;
+            MyCoins_btn.Click += MyCoins_btn_Click;
             // 
             // Balance_lb
             // 
@@ -129,7 +131,7 @@
             Content_pnl.Size = new Size(921, 701);
             Content_pnl.TabIndex = 1;
             // 
-            // Form1
+            // Numismatics
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -138,7 +140,7 @@
             Controls.Add(Content_pnl);
             Controls.Add(Controls_pnl);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
-            Name = "Form1";
+            Name = "Numismatics";
             Text = "Form1";
             Controls_pnl.ResumeLayout(false);
             Controls_pnl.PerformLayout();

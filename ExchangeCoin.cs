@@ -41,7 +41,7 @@ namespace Numismatics
         {
             Numismatics parent = this.Parent.Parent as Numismatics;
             double price = double.Parse(base.Price_lb.Text);
-            double myPrice = double.Parse(this.PriceMy_lb.Text);
+            double myPrice = PriceMy_lb.Text.Equals(string.Empty) ? 0 : double.Parse(this.PriceMy_lb.Text);
             if (price.Equals(myPrice))
             {
                 Coin tempCoin = parent.MyContext.Coins.FirstOrDefault(x => x.ID.Equals(CoinID));
